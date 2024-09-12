@@ -260,17 +260,17 @@ class MainActivity : ThemedActivity() {
             }
         }
 
-//        binding.language.apply {
-//            isVisible =
-//                androidNougat {
-//                    setText(i18n.string.language)
-//                    setOnClickListener {
-//                        soundManager.playClickSound()
-//                        analyticsManager.sentEvent(Analytics.OpenLanguage)
-//                        viewModel.sendEvent(MainEvent.StartLanguageEvent)
-//                    }
-//                }
-//        }
+        binding.language.apply {
+            isVisible =
+                androidNougat {
+                    setText(i18n.string.language)
+                    setOnClickListener {
+                        soundManager.playClickSound()
+                        analyticsManager.sentEvent(Analytics.OpenLanguage)
+                        viewModel.sendEvent(MainEvent.StartLanguageEvent)
+                    }
+                }
+        }
 
         binding.stats.setOnClickListener {
             soundManager.playClickSound()

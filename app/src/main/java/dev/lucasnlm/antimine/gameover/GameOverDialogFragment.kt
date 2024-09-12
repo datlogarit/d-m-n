@@ -95,15 +95,15 @@ class GameOverDialogFragment : CommonGameDialogFragment() {
                             dismissAllowingStateLoss()
                         }
 
-                        continueGame.setOnClickListener {
-                            analyticsManager.sentEvent(Analytics.ContinueGame)
-                            if (!isPremiumEnabled) {
-                                showAdsAndContinue()
-                            } else {
-                                gameViewModel.sendEvent(GameEvent.ContinueGame)
-                                dismissAllowingStateLoss()
-                            }
-                        }
+//                        continueGame.setOnClickListener {
+//                            analyticsManager.sentEvent(Analytics.ContinueGame)
+//                            if (!isPremiumEnabled) {
+//                                showAdsAndContinue()
+//                            } else {
+//                                gameViewModel.sendEvent(GameEvent.ContinueGame)
+//                                dismissAllowingStateLoss()
+//                            }
+//                        }
 
                         settings.setOnClickListener {
                             analyticsManager.sentEvent(Analytics.OpenSettings)
@@ -122,39 +122,39 @@ class GameOverDialogFragment : CommonGameDialogFragment() {
                             dismissAllowingStateLoss()
                         }
 
-                        if (featureFlagManager.isFoss && canRequestDonation) {
-                            showDonationDialog(adFrame)
-                        } else if (!isPremiumEnabled && featureFlagManager.isBannerAdEnabled) {
-                            showAdBannerDialog(adFrame)
-                        }
+//                        if (featureFlagManager.isFoss && canRequestDonation) {
+//                            showDonationDialog(adFrame)
+//                        } else if (!isPremiumEnabled && featureFlagManager.isBannerAdEnabled) {
+//                            showAdBannerDialog(adFrame)
+//                        }
 
-                        if (!state.showTutorial && state.showContinueButton) {
-                            continueGame.isVisible = true
-                            if (!isPremiumEnabled) {
-                                continueGame.compoundDrawablePadding = 0
-                                continueGame.setCompoundDrawablesWithIntrinsicBounds(
-                                    R.drawable.watch_ads_icon,
-                                    0,
-                                    0,
-                                    0,
-                                )
-                            }
-
-                            if (!isPremiumEnabled && featureFlagManager.showCountdownToContinue) {
-                                countdown.isVisible = true
-                                lifecycleScope.launch {
-                                    repeat(CONTINUE_COUNTDOWN_SECONDS) {
-                                        countdown.text = (CONTINUE_COUNTDOWN_SECONDS - it).toString()
-                                        delay(DateUtils.SECOND_IN_MILLIS)
-                                    }
-                                    countdown.isVisible = false
-                                    continueGame.isVisible = false
-                                }
-                            }
-                        } else {
-                            continueGame.isVisible = false
-                            countdown.isVisible = false
-                        }
+//                        if (!state.showTutorial && state.showContinueButton) {
+//                            continueGame.isVisible = true
+//                            if (!isPremiumEnabled) {
+//                                continueGame.compoundDrawablePadding = 0
+//                                continueGame.setCompoundDrawablesWithIntrinsicBounds(
+//                                    R.drawable.watch_ads_icon,
+//                                    0,
+//                                    0,
+//                                    0,
+//                                )
+//                            }
+//
+//                            if (!isPremiumEnabled && featureFlagManager.showCountdownToContinue) {
+//                                countdown.isVisible = true
+//                                lifecycleScope.launch {
+//                                    repeat(CONTINUE_COUNTDOWN_SECONDS) {
+//                                        countdown.text = (CONTINUE_COUNTDOWN_SECONDS - it).toString()
+//                                        delay(DateUtils.SECOND_IN_MILLIS)
+//                                    }
+//                                    countdown.isVisible = false
+//                                    continueGame.isVisible = false
+//                                }
+//                            }
+//                        } else {
+//                            continueGame.isVisible = false
+//                            countdown.isVisible = false
+//                        }
 
                         if (state.showTutorial) {
                             tutorial.isVisible = true
@@ -162,34 +162,36 @@ class GameOverDialogFragment : CommonGameDialogFragment() {
                                 val intent = Intent(context, TutorialActivity::class.java)
                                 context.startActivity(intent)
                             }
-                        } else if (!isPremiumEnabled && !isInstantMode) {
-                            activity?.let { activity ->
-                                val label = context.getString(i18n.string.remove_ad)
-                                val priceModel = billingManager.getPrice()
-                                val price = priceModel?.price
-                                val unlockLabel = price?.let { "$label - $it" } ?: label
-                                removeAds.apply {
-                                    isVisible = true
-                                    text = unlockLabel
-
-                                    setOnClickListener {
-                                        analyticsManager.sentEvent(Analytics.RemoveAds)
-                                        lifecycleScope.launch {
-                                            billingManager.charge(activity)
-                                        }
-                                    }
-                                }
-                            }
-                        } else if (!isPremiumEnabled && isInstantMode) {
-                            removeAds.apply {
-                                isVisible = true
-                                text = getString(i18n.string.themes)
-                                setOnClickListener {
-                                    val intent = Intent(context, ThemeActivity::class.java)
-                                    startActivity(intent)
-                                }
-                            }
                         }
+//                        else if (!isPremiumEnabled && !isInstantMode) {
+//                            activity?.let { activity ->
+//                                val label = context.getString(i18n.string.remove_ad)
+//                                val priceModel = billingManager.getPrice()
+//                                val price = priceModel?.price
+//                                val unlockLabel = price?.let { "$label - $it" } ?: label
+//                                removeAds.apply {
+//                                    isVisible = true
+//                                    text = unlockLabel
+//
+//                                    setOnClickListener {
+//                                        analyticsManager.sentEvent(Analytics.RemoveAds)
+//                                        lifecycleScope.launch {
+//                                            billingManager.charge(activity)
+//                                        }
+//                                    }
+//                                }
+//                            }
+//                        }
+//                        else if (!isPremiumEnabled && isInstantMode) {
+//                            removeAds.apply {
+//                                isVisible = true
+//                                text = getString(i18n.string.themes)
+//                                setOnClickListener {
+//                                    val intent = Intent(context, ThemeActivity::class.java)
+//                                    startActivity(intent)
+//                                }
+//                            }
+//                        }
                     }
                 }
             }

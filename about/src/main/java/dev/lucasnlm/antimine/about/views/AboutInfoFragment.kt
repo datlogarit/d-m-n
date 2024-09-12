@@ -107,17 +107,17 @@ class AboutInfoFragment : Fragment() {
             }
         }
 
-        binding.thirdsParties.setOnClickListener {
-            aboutViewModel.sendEvent(AboutEvent.ThirdPartyLicenses)
-        }
+//        binding.thirdsParties.setOnClickListener {
+//            aboutViewModel.sendEvent(AboutEvent.ThirdPartyLicenses)
+//        }
 
         binding.translation.setOnClickListener {
             aboutViewModel.sendEvent(AboutEvent.Translators)
         }
 
-        binding.sourceCode.setOnClickListener {
-            aboutViewModel.sendEvent(AboutEvent.SourceCode)
-        }
+//        binding.sourceCode.setOnClickListener {
+//            aboutViewModel.sendEvent(AboutEvent.SourceCode)
+//        }
     }
 
     private fun openComposer(composerLink: String) {

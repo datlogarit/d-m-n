@@ -70,6 +70,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="4dp"
                         android:layout_marginTop="4dp"
+                        android:text="CONTINUE"
                         app:icon="@drawable/play" />
 
                     <com.google.android.material.button.MaterialButton
@@ -481,14 +482,13 @@
                         android:text="@string/tutorial"
                         app:icon="@drawable/tutorial" />
 
-<!--                    <com.google.android.material.button.MaterialButton-->
-<!--                            android:visibility="gone"-->
-<!--                        android:id="@+id/language"-->
-<!--                        style="@style/CustomButton"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="@string/language"-->
-<!--                        app:icon="@drawable/translate" />-->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/language"
+                        style="@style/CustomButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/language"
+                        app:icon="@drawable/translate" />
 
 <!--                    <com.google.android.material.button.MaterialButton-->
 <!--                        android:id="@+id/play_games"-->

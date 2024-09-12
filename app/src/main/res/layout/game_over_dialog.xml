@@ -107,19 +107,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/continue_game"
-                    style="@style/Widget.Material3.Button.TonalButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/continue_game"
-                    android:textAllCaps="true"
-                    android:textColor="?colorSurfaceVariant"
-                    android:textSize="@dimen/base_font_size"
-                    app:backgroundTint="?colorAccent"
-                    app:iconPadding="0dp"
-                    app:iconTint="?colorSurfaceVariant"
-                    app:iconTintMode="multiply" />
+<!--                <com.google.android.material.button.MaterialButton-->
+<!--                    android:id="@+id/continue_game"-->
+<!--                    style="@style/Widget.Material3.Button.TonalButton"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/continue_game"-->
+<!--                    android:textAllCaps="true"-->
+<!--                    android:textColor="?colorSurfaceVariant"-->
+<!--                    android:textSize="@dimen/base_font_size"-->
+<!--                    app:backgroundTint="?colorAccent"-->
+<!--                    app:iconPadding="0dp"-->
+<!--                    app:iconTint="?colorSurfaceVariant"-->
+<!--                    app:iconTintMode="multiply" />-->
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/countdown"
@@ -149,17 +149,17 @@
                 <requestFocus />
             </com.google.android.material.button.MaterialButton>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/remove_ads"
-                style="@style/Widget.Material3.Button.OutlinedButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/remove_ad"
-                android:textAllCaps="true"
-                android:textSize="@dimen/base_font_size"
-                android:visibility="gone"
-                app:strokeWidth="0dp"
-                tools:visibility="visible" />
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/remove_ads"-->
+<!--                style="@style/Widget.Material3.Button.OutlinedButton"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/remove_ad"-->
+<!--                android:textAllCaps="true"-->
+<!--                android:textSize="@dimen/base_font_size"-->
+<!--                android:visibility="gone"-->
+<!--                app:strokeWidth="0dp"-->
+<!--                tools:visibility="visible" />-->
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/tutorial"
