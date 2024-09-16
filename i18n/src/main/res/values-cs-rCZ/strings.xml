@@ -127,7 +127,7 @@
     <string name="switch_control">Přepnout: označit a otevřít</string>
     <string name="switch_control_desc">Pomocí tlačítka můžete přepínat mezi označením a otevřením</string>
     <string name="app_description">Musíte vyčistit obdélníkovou desku obsahující skryté miny, aniž by kterákoliv z nich vybuchla.</string>
-    <string name="app_name">Anti-Mine</string>
+    <string name="app_name">MineMaster</string>
     <string name="do_you_know_how_to_play">Víte, jak hrát Minesweeper?</string>
     <string name="close">Zavřít</string>
     <string name="open_tutorial">Otevřít průvodce</string>

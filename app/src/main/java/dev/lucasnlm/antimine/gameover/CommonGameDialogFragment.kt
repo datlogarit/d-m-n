@@ -51,9 +51,9 @@ abstract class CommonGameDialogFragment : AppCompatDialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        if (!preferencesRepository.isPremiumEnabled()) {
-            billingManager.start()
-        }
+//        if (!preferencesRepository.isPremiumEnabled()) {
+//            billingManager.start()
+//        }
     }
 
     fun showAllowingStateLoss(

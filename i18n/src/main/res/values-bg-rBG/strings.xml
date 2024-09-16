@@ -127,7 +127,7 @@
     <string name="switch_control">Размени: Флаг и Отваряне</string>
     <string name="switch_control_desc">Използвай бутонът за да превключиш между Флаг и Отваряне</string>
     <string name="app_description">Вие трябва да изчистите квадратна дъска която има скрити мини без да взривите нито една от тях.</string>
-    <string name="app_name">Antimine</string>
+    <string name="app_name">MineMaster</string>
     <string name="do_you_know_how_to_play">Знаете ли как да играете Minesweeper?</string>
     <string name="close">Затвори</string>
     <string name="open_tutorial">Отвори въведение</string>

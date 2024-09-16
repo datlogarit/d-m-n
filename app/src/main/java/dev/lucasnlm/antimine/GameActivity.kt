@@ -125,9 +125,9 @@ class GameActivity :
 
         setContentView(binding.root)
 
-        if (!preferencesRepository.isPremiumEnabled()) {
-            adsManager.start(this)
-        }
+//        if (!preferencesRepository.isPremiumEnabled()) {
+//            adsManager.start(this)
+//        }
 
         bindViewModel()
         bindToolbar()
@@ -573,13 +573,13 @@ class GameActivity :
     private fun refreshTipShortcutIcon() {
         val dt = System.currentTimeMillis() - preferencesRepository.lastHelpUsed()
         val canUseHelpNow = dt > TIP_COOLDOWN_MS
-        val canRequestHelpWithAds = gameViewModel.getTips() == 0 && adsManager.isAvailable()
+        val canRequestHelpWithAds = gameViewModel.getTips() == 0 //&& adsManager.isAvailable()
 
         binding.hintCounter.apply {
             isVisible = canUseHelpNow
             text =
                 if (canRequestHelpWithAds) {
-                    "+10"
+                    "+10"//
                 } else {
                     gameViewModel.getTips().toL10nString()
                 }
@@ -587,11 +587,11 @@ class GameActivity :
 
         binding.shortcutIcon.apply {
             TooltipCompat.setTooltipText(this, getString(i18n.string.help))
-            if (canRequestHelpWithAds) {
-                setImageResource(R.drawable.movie)
-            } else {
+//            if (canRequestHelpWithAds) {
+//                setImageResource(R.drawable.movie)
+//            } else {
                 setImageResource(R.drawable.hint)
-            }
+//            }
             setColorFilter(binding.minesCount.currentTextColor)
 
             if (canUseHelpNow) {
@@ -722,27 +722,28 @@ class GameActivity :
     }
 
     private fun startNewGameWithAds() {
-        if (!preferencesRepository.isPremiumEnabled()) {
-            if (featureFlagManager.useInterstitialAd) {
-                adsManager.showInterstitialAd(
-                    activity = this,
-                    onError = {
-                        lifecycleScope.launch {
-                            gameViewModel.startNewGame()
-                        }
-                    },
-                    onDismiss = {
-                        lifecycleScope.launch {
-                            gameViewModel.startNewGame()
-                        }
-                    },
-                )
-            }
-        } else {
+//        if (!preferencesRepository.isPremiumEnabled()) {
+//            if (featureFlagManager.useInterstitialAd) {
+//                adsManager.showInterstitialAd(
+//                    activity = this,
+//                    onError = {
+//                        lifecycleScope.launch {
+//                            gameViewModel.startNewGame()
+//                        }
+//                    },
+//                    onDismiss = {
+//                        lifecycleScope.launch {
+//                            gameViewModel.startNewGame()
+//                        }
+//                    },
+//                )
+//            }
+//        }
+//        else {
             lifecycleScope.launch {
                 gameViewModel.startNewGame()
             }
-        }
+//        }
     }
 
     private fun refreshRetryShortcut(enabled: Boolean) {
@@ -905,7 +906,7 @@ class GameActivity :
         const val START_GAME = "start_game"
         const val RETRY_GAME = "retry_game"
 
-        const val TIP_COOLDOWN_MS = 2 * 1000L
+        const val TIP_COOLDOWN_MS = 3 * 1000L
         const val MINE_COUNTER_ANIM_COUNTER_MS = 250L
         const val LOADING_INDICATOR_MS = 500L
 

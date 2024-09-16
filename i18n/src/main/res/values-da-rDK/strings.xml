@@ -127,7 +127,7 @@
     <string name="switch_control">Skifter: Flag og Åbn</string>
     <string name="switch_control_desc">Brug knap til at skifte mellem Flag og Åbn</string>
     <string name="app_description">Du skal rydde en rektangulær tavle med skjulte miner uden at detonere nogen af dem.</string>
-    <string name="app_name">Antimine - Minestryger</string>
+    <string name="app_name">MineMaster</string>
     <string name="do_you_know_how_to_play">Ved du hvordan man spiller minesweeper?</string>
     <string name="close">Luk</string>
     <string name="open_tutorial">Åben vejledning</string>

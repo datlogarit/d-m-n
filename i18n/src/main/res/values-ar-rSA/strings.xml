@@ -127,7 +127,7 @@
     <string name="switch_control">التبديل: العلامة والفتح</string>
     <string name="switch_control_desc">استخدم الزر للتبديل بين العلامة والفتح</string>
     <string name="app_description">يجب عليك مسح لوحة مستطيلة تحتوي على ألغام مخفية دون تفجير أي منها.</string>
-    <string name="app_name">Antimine</string>
+    <string name="app_name">MineMaster</string>
     <string name="do_you_know_how_to_play">هل تعرف كيف تلعب كانسة الألغام؟</string>
     <string name="close">أغلاق</string>
     <string name="open_tutorial">فتح البرنامج التعليمي</string>

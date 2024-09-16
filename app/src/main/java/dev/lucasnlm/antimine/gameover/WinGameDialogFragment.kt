@@ -105,30 +105,32 @@ class WinGameDialogFragment : CommonGameDialogFragment() {
                         }
 
                         newGame.setOnClickListener {
-                            if (!isPremiumEnabled) {
-                                showAdsAndContinue()
-                            } else {
+//                            if (!isPremiumEnabled) {
+//                                showAdsAndContinue()
+//                            } else {
                                 continueGame()
-                            }
+//                            }
                         }
 
-                        if (!isPremiumEnabled) {
-                            newGame.compoundDrawablePadding = 0
-                            newGame.setCompoundDrawablesWithIntrinsicBounds(
-                                R.drawable.watch_ads_icon,
-                                0,
-                                0,
-                                0,
-                            )
-                        }
+//                        if (!isPremiumEnabled) {
+//                            newGame.compoundDrawablePadding = 0
+//                            newGame.setCompoundDrawablesWithIntrinsicBounds(
+//                                R.drawable.watch_ads_icon,
+//                                0,
+//                                0,
+//                                0,
+//                            )
+//                        }
 
-                        if (featureFlagManager.isFoss && canRequestDonation) {
-                            showDonationDialog(adFrame)
-                        } else if (!isPremiumEnabled && featureFlagManager.isBannerAdEnabled) {
-                            showAdBannerDialog(adFrame)
-                        } else if (state.showMusicDialog) {
-                            showMusicDialog(adFrame)
-                        }
+//                        if (featureFlagManager.isFoss && canRequestDonation) {
+//                            showDonationDialog(adFrame)
+//                        }
+//                        else if (!isPremiumEnabled && featureFlagManager.isBannerAdEnabled) {
+//                            showAdBannerDialog(adFrame)
+//                        }
+//                        else if (state.showMusicDialog) {
+//                            showMusicDialog(adFrame)
+//                        }
 
                         settings.setOnClickListener {
                             analyticsManager.sentEvent(Analytics.OpenSettings)
@@ -142,23 +144,23 @@ class WinGameDialogFragment : CommonGameDialogFragment() {
                             stats.isVisible = true
                         }
 
-                        if (!isPremiumEnabled && !isInstantMode) {
-                            activity?.let { activity ->
-                                val label = context.getString(i18n.string.remove_ad)
-                                val price = billingManager.getPrice()?.price
-                                val unlockLabel = price?.let { "$label - $it" } ?: label
-                                removeAds.apply {
-                                    isVisible = true
-                                    text = unlockLabel
-                                    setOnClickListener {
-                                        analyticsManager.sentEvent(Analytics.RemoveAds)
-                                        lifecycleScope.launch {
-                                            billingManager.charge(activity)
-                                        }
-                                    }
-                                }
-                            }
-                        }
+//                        if (!isPremiumEnabled && !isInstantMode) {
+//                            activity?.let { activity ->
+//                                val label = context.getString(i18n.string.remove_ad)
+//                                val price = billingManager.getPrice()?.price
+//                                val unlockLabel = price?.let { "$label - $it" } ?: label
+//                                removeAds.apply {
+//                                    isVisible = true
+//                                    text = unlockLabel
+//                                    setOnClickListener {
+//                                        analyticsManager.sentEvent(Analytics.RemoveAds)
+//                                        lifecycleScope.launch {
+//                                            billingManager.charge(activity)
+//                                        }
+//                                    }
+//                                }
+//                            }
+//                        }
 
                         receivedMessage.apply {
                             if (state.received > 0 &&

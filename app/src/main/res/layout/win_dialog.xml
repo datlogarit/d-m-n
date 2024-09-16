@@ -148,17 +148,17 @@
                 app:strokeWidth="0dp"
                 tools:visibility="visible" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/remove_ads"
-                style="@style/Widget.Material3.Button.OutlinedButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/remove_ad"
-                android:textAllCaps="true"
-                android:textSize="@dimen/base_font_size"
-                android:visibility="gone"
-                app:strokeWidth="0dp"
-                tools:visibility="visible" />
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/remove_ads"-->
+<!--                style="@style/Widget.Material3.Button.OutlinedButton"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/remove_ad"-->
+<!--                android:textAllCaps="true"-->
+<!--                android:textSize="@dimen/base_font_size"-->
+<!--                android:visibility="gone"-->
+<!--                app:strokeWidth="0dp"-->
+<!--                tools:visibility="visible" />-->
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
