@@ -35,3 +35,10 @@ android {
         viewBinding = true
     }
 }
+dependencies {
+    implementation(libs.material)
+    implementation(libs.appcompat)
+    implementation(libs.constraintlayout)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
+}

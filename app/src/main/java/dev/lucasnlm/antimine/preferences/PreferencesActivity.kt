@@ -154,10 +154,10 @@ class PreferencesActivity :
             onChangeValue = { preferencesRepository.mustShowWindowsWhenFinishGame(it) },
         )
 
-        binding.openDirectly.bindItem(
-            initialValue = preferencesRepository.openGameDirectly(),
-            onChangeValue = { preferencesRepository.setOpenGameDirectly(it) },
-        )
+//        binding.openDirectly.bindItem(
+//            initialValue = preferencesRepository.openGameDirectly(),
+//            onChangeValue = { preferencesRepository.setOpenGameDirectly(it) },
+//        )
 
         binding.useQuestionMark.bindItem(
             initialValue = preferencesRepository.useQuestionMark(),
@@ -169,60 +169,60 @@ class PreferencesActivity :
             onChangeValue = { preferencesRepository.setTimerVisible(it) },
         )
 
-        binding.automaticFlags.bindItem(
-            initialValue = preferencesRepository.useFlagAssistant(),
-            onChangeValue = { preferencesRepository.setFlagAssistant(it) },
-        )
+//        binding.automaticFlags.bindItem(
+//            initialValue = preferencesRepository.useFlagAssistant(),
+//            onChangeValue = { preferencesRepository.setFlagAssistant(it) },
+//        )
 
         binding.hint.bindItem(
             initialValue = preferencesRepository.useHelp(),
             onChangeValue = { preferencesRepository.setHelp(it) },
         )
 
-        binding.noGuessingMode.bindItem(
-            initialValue = preferencesRepository.useSimonTathamAlgorithm(),
-            onChangeValue = { preferencesRepository.setSimonTathamAlgorithm(it) },
-        )
+//        binding.noGuessingMode.bindItem(
+//            initialValue = preferencesRepository.useSimonTathamAlgorithm(),
+//            onChangeValue = { preferencesRepository.setSimonTathamAlgorithm(it) },
+//        )
 
-        binding.allowClickNumber.bindItem(
-            initialValue = preferencesRepository.allowTapOnNumbers(),
-            onChangeValue = {
-                preferencesRepository.setAllowTapOnNumbers(it)
-                binding.flagWhenTapOnNumbers.isVisible = it
-                binding.flagWhenTapOnNumbers.isVisible = it
-            },
-        )
+//        binding.allowClickNumber.bindItem(
+//            initialValue = preferencesRepository.allowTapOnNumbers(),
+//            onChangeValue = {
+//                preferencesRepository.setAllowTapOnNumbers(it)
+//                binding.flagWhenTapOnNumbers.isVisible = it
+//                binding.flagWhenTapOnNumbers.isVisible = it
+//            },
+//        )
 
-        binding.flagWhenTapOnNumbers.bindItem(
-            initialValue = preferencesRepository.letNumbersAutoFlag(),
-            onChangeValue = { preferencesRepository.setNumbersAutoFlag(it) },
-        )
+//        binding.flagWhenTapOnNumbers.bindItem(
+//            initialValue = preferencesRepository.letNumbersAutoFlag(),
+//            onChangeValue = { preferencesRepository.setNumbersAutoFlag(it) },
+//        )
+//
+//        if (!preferencesRepository.allowTapOnNumbers()) {
+//            binding.flagWhenTapOnNumbers.isVisible = false
+//            binding.flagWhenTapOnNumbers.isVisible = false
+//        }
 
-        if (!preferencesRepository.allowTapOnNumbers()) {
-            binding.flagWhenTapOnNumbers.isVisible = false
-            binding.flagWhenTapOnNumbers.isVisible = false
-        }
+//        binding.highlightUnsolvedNumbers.bindItem(
+//            initialValue = preferencesRepository.dimNumbers(),
+//            onChangeValue = { preferencesRepository.setDimNumbers(it) },
+//        )
+//
+//        binding.immersiveMode.bindItem(
+//            initialValue = preferencesRepository.useImmersiveMode(),
+//            onChangeValue = { preferencesRepository.setImmersiveMode(it) },
+//        )
 
-        binding.highlightUnsolvedNumbers.bindItem(
-            initialValue = preferencesRepository.dimNumbers(),
-            onChangeValue = { preferencesRepository.setDimNumbers(it) },
-        )
-
-        binding.immersiveMode.bindItem(
-            initialValue = preferencesRepository.useImmersiveMode(),
-            onChangeValue = { preferencesRepository.setImmersiveMode(it) },
-        )
-
-        if (playGamesManager.hasGooglePlayGames()) {
-            binding.playGames.bindItem(
-                initialValue = preferencesRepository.keepRequestPlayGames(),
-                onChangeValue = {
-                    preferencesRepository.setRequestPlayGames(it)
-                },
-            )
-        } else {
+//        if (playGamesManager.hasGooglePlayGames()) {
+//            binding.playGames.bindItem(
+//                initialValue = preferencesRepository.keepRequestPlayGames(),
+//                onChangeValue = {
+//                    preferencesRepository.setRequestPlayGames(it)
+//                },
+//            )
+//        } else {
             binding.playGames.isVisible = false
-        }
+//        }
 
         binding.exportSettings.apply {
             isVisible = !isAndroidAuto()
