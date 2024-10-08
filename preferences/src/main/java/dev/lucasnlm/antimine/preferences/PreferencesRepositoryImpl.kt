@@ -269,7 +269,7 @@ class PreferencesRepositoryImpl(
     }
 
     override fun setPremiumFeatures(status: Boolean) {
-        if (!preferencesManager.getBoolean(PreferenceKeys.PREFERENCE_PREMIUM_FEATURES, false)) {
+        if (!preferencesManager.getBoolean(PreferenceKeys.PREFERENCE_PREMIUM_FEATURES, true)) {
             preferencesManager.putBoolean(PreferenceKeys.PREFERENCE_PREMIUM_FEATURES, status)
         }
     }
@@ -279,7 +279,7 @@ class PreferencesRepositoryImpl(
     }
 
     override fun isPremiumEnabled(): Boolean {
-        return preferencesManager.getBoolean(PreferenceKeys.PREFERENCE_PREMIUM_FEATURES, false)
+        return preferencesManager.getBoolean(PreferenceKeys.PREFERENCE_PREMIUM_FEATURES, true)
     }
 
     override fun showSupport(): Boolean {

@@ -590,7 +590,7 @@ class GameActivity :
 //            if (canRequestHelpWithAds) {
 //                setImageResource(R.drawable.movie)
 //            } else {
-                setImageResource(R.drawable.hint)
+            setImageResource(R.drawable.hint)
 //            }
             setColorFilter(binding.minesCount.currentTextColor)
 
@@ -740,9 +740,9 @@ class GameActivity :
 //            }
 //        }
 //        else {
-            lifecycleScope.launch {
-                gameViewModel.startNewGame()
-            }
+        lifecycleScope.launch {
+            gameViewModel.startNewGame()
+        }
 //        }
     }
 

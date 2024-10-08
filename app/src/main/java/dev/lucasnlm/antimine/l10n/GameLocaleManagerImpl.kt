@@ -10,12 +10,12 @@ class GameLocaleManagerImpl(
 ) : GameLocaleManager {
     override fun getAllGameLocaleTags(): List<String> {
         return listOf(
-            "af", "ar", "bg", "ca", "cs", "da", "de", "el", "en", "eo", "es", "fa", "fi", "fr", "hi", "hu",
-            "in", "it", "iw", "ja", "ko", "ku", "it", "lv", "nl", "no", "pl", "pt-PT", "pt-BR", "ro", "ru",
-            "si", "sk", "sl", "sv", "ta", "th", "tr", "uk", "vec", "vi", "zh", "eu",
+             "en",  "vi",
         ).distinct()
     }
-
+//    "af", "ar", "bg", "ca", "cs", "da", "de", "el", "en", "eo", "es", "fa", "fi", "fr", "hi", "hu",
+//    "in", "it", "iw", "ja", "ko", "ku", "it", "lv", "nl", "no", "pl", "pt-PT", "pt-BR", "ro", "ru",
+//    "si", "sk", "sl", "sv", "ta", "th", "tr", "uk", "vec", "vi", "zh", "eu",
     override fun setGameLocale(tag: String) {
         preferencesRepository.setPreferredLocale(tag)
     }

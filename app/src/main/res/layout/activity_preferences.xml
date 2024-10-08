@@ -88,13 +88,13 @@
                         android:textSize="@dimen/base_font_size"
                         android:text="@string/music" />
 
-                    <com.google.android.material.materialswitch.MaterialSwitch
-                        android:id="@+id/showWindows"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingVertical="16dp"
-                        android:textSize="@dimen/base_font_size"
-                        android:text="@string/show_windows" />
+<!--                    <com.google.android.material.materialswitch.MaterialSwitch-->
+<!--                        android:id="@+id/showWindows"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:paddingVertical="16dp"-->
+<!--                        android:textSize="@dimen/base_font_size"-->
+<!--                        android:text="@string/show_windows" />-->
 
 <!--                    <com.google.android.material.materialswitch.MaterialSwitch-->
 <!--                        android:id="@+id/openDirectly"-->
@@ -194,13 +194,13 @@
                         android:textSize="@dimen/base_font_size"
                         android:text="@string/help" />
 
-                    <com.google.android.material.materialswitch.MaterialSwitch
-                        android:id="@+id/highlightUnsolvedNumbers"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingVertical="16dp"
-                        android:textSize="@dimen/base_font_size"
-                        android:text="@string/highlight_unsolved_numbers" />
+<!--                    <com.google.android.material.materialswitch.MaterialSwitch-->
+<!--                        android:id="@+id/highlightUnsolvedNumbers"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:paddingVertical="16dp"-->
+<!--                        android:textSize="@dimen/base_font_size"-->
+<!--                        android:text="@string/highlight_unsolved_numbers" />-->
 
                     <com.google.android.material.materialswitch.MaterialSwitch
                         android:id="@+id/showTimer"

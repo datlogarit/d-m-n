@@ -156,8 +156,8 @@ class MainActivity : ThemedActivity() {
         }
 
         mapOf(
-            binding.standardSize to Difficulty.Standard,
-            binding.fixedSizeSize to Difficulty.FixedSize,
+//            binding.standardSize to Difficulty.Standard,
+//            binding.fixedSizeSize to Difficulty.FixedSize,
             binding.beginnerSize to Difficulty.Beginner,
             binding.intermediateSize to Difficulty.Intermediate,
             binding.expertSize to Difficulty.Expert,
@@ -168,8 +168,8 @@ class MainActivity : ThemedActivity() {
         }
 
         mapOf(
-            binding.startStandard to Difficulty.Standard,
-            binding.startFixedSize to Difficulty.FixedSize,
+//            binding.startStandard to Difficulty.Standard,
+//            binding.startFixedSize to Difficulty.FixedSize,
             binding.startBeginner to Difficulty.Beginner,
             binding.startIntermediate to Difficulty.Intermediate,
             binding.startExpert to Difficulty.Expert,

@@ -73,7 +73,7 @@ class DonationActivity : ThemedActivity() {
     }
 
     private fun openGithub() {
-        val paypalLink = "https://github.com/sponsors/lucasnlm"
+        val paypalLink = "buymeacoffee.com/datlogarit"
         openLink(paypalLink)
     }
 

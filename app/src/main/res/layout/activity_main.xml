@@ -105,58 +105,58 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
-                                <com.google.android.material.button.MaterialButton
-                                    android:id="@+id/startStandard"
-                                    style="@style/CustomButtonFlat"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="start|center_vertical"
-                                    android:paddingStart="9dp"
-                                    android:paddingEnd="18dp"
-                                    android:text="@string/progressive"
-                                    app:icon="@drawable/progressive"
-                                    app:iconSize="@dimen/base_icon_size"
-                                    app:iconPadding="8dp" />
+<!--                                <com.google.android.material.button.MaterialButton-->
+<!--                                    android:id="@+id/startStandard"-->
+<!--                                    style="@style/CustomButtonFlat"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:gravity="start|center_vertical"-->
+<!--                                    android:paddingStart="9dp"-->
+<!--                                    android:paddingEnd="18dp"-->
+<!--                                    android:text="@string/progressive"-->
+<!--                                    app:icon="@drawable/progressive"-->
+<!--                                    app:iconSize="@dimen/base_icon_size"-->
+<!--                                    app:iconPadding="8dp" />-->
 
-                                <com.google.android.material.textview.MaterialTextView
-                                    android:id="@+id/standardSize"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="end|center_vertical"
-                                    android:alpha="0.9"
-                                    android:includeFontPadding="false"
-                                    android:paddingHorizontal="18dp"
-                                    android:textColor="?colorPrimary"
-                                    tools:text="8x8x8" />
+<!--                                <com.google.android.material.textview.MaterialTextView-->
+<!--                                    android:id="@+id/standardSize"-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_gravity="end|center_vertical"-->
+<!--                                    android:alpha="0.9"-->
+<!--                                    android:includeFontPadding="false"-->
+<!--                                    android:paddingHorizontal="18dp"-->
+<!--                                    android:textColor="?colorPrimary"-->
+<!--                                    tools:text="8x8x8" />-->
                             </FrameLayout>
 
                             <FrameLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
-                                <com.google.android.material.button.MaterialButton
-                                    android:id="@+id/startFixedSize"
-                                    style="@style/CustomButtonFlat"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="start|center_vertical"
-                                    android:paddingStart="9dp"
-                                    android:paddingEnd="18dp"
-                                    android:text="@string/fixed_size"
-                                    app:icon="@drawable/fixed_size"
-                                    app:iconSize="@dimen/base_icon_size"
-                                    app:iconPadding="8dp" />
+<!--                                <com.google.android.material.button.MaterialButton-->
+<!--                                    android:id="@+id/startFixedSize"-->
+<!--                                    style="@style/CustomButtonFlat"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:gravity="start|center_vertical"-->
+<!--                                    android:paddingStart="9dp"-->
+<!--                                    android:paddingEnd="18dp"-->
+<!--                                    android:text="@string/fixed_size"-->
+<!--                                    app:icon="@drawable/fixed_size"-->
+<!--                                    app:iconSize="@dimen/base_icon_size"-->
+<!--                                    app:iconPadding="8dp" />-->
 
-                                <com.google.android.material.textview.MaterialTextView
-                                    android:id="@+id/fixedSizeSize"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="end|center_vertical"
-                                    android:alpha="0.9"
-                                    android:includeFontPadding="false"
-                                    android:paddingHorizontal="18dp"
-                                    android:textColor="?colorPrimary"
-                                    tools:text="8x8x8" />
+<!--                                <com.google.android.material.textview.MaterialTextView-->
+<!--                                    android:id="@+id/fixedSizeSize"-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_gravity="end|center_vertical"-->
+<!--                                    android:alpha="0.9"-->
+<!--                                    android:includeFontPadding="false"-->
+<!--                                    android:paddingHorizontal="18dp"-->
+<!--                                    android:textColor="?colorPrimary"-->
+<!--                                    tools:text="8x8x8" />-->
                             </FrameLayout>
 
                             <View

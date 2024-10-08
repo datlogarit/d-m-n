@@ -149,10 +149,10 @@ class PreferencesActivity :
             onChangeValue = { preferencesRepository.setMusicEnabled(it) },
         )
 
-        binding.showWindows.bindItem(
-            initialValue = preferencesRepository.showWindowsWhenFinishGame(),
-            onChangeValue = { preferencesRepository.mustShowWindowsWhenFinishGame(it) },
-        )
+//        binding.showWindows.bindItem(
+//            initialValue = preferencesRepository.showWindowsWhenFinishGame(),
+//            onChangeValue = { preferencesRepository.mustShowWindowsWhenFinishGame(it) },
+//        )
 
 //        binding.openDirectly.bindItem(
 //            initialValue = preferencesRepository.openGameDirectly(),

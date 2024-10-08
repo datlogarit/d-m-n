@@ -199,9 +199,10 @@ std::basic_string<std::size_t> generate_random_minefield_with_safe_area(
     const std::size_t size = width * height;
     std::basic_string<std::size_t> result = std::basic_string<std::size_t>(size, 0);
 
-    std::size_t current_mines = 0;
-    std::size_t remain_empty = size;
-    std::size_t min_empty_squares = calc_safe_area(width, height, start_x, start_y);
+    std::size_t current_mines = 0;//số mìn hiện tại
+    std::size_t remain_empty = size;// số ô trống còn lại để đặt min
+    std::size_t min_empty_squares = calc_safe_area(width, height, start_x, start_y);//số ô cần giữ trống để đảm bảo
+    //vùng an toàn
 
     if (safe_border) {
         remain_empty -= (height * 2 + width * 2);

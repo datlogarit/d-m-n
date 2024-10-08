@@ -48,9 +48,9 @@ class StatsViewModel(
                 // General
                 fold().copy(title = i18n.string.general),
                 // Progressive
-                filterStandard(standardSize).fold().copy(title = i18n.string.progressive),
+               // filterStandard(standardSize).fold().copy(title = i18n.string.progressive),
                 // Fixed Size
-                filter(::isFixedSize).fold().copy(title = i18n.string.fixed_size),
+               // filter(::isFixedSize).fold().copy(title = i18n.string.fixed_size),
                 // Legend
                 filter(::isLegend).fold().copy(title = i18n.string.legend),
                 // Master
@@ -68,8 +68,8 @@ class StatsViewModel(
                     .filterNot(::isBeginner)
                     .filterNot(::isMaster)
                     .filterNot(::isLegend)
-                    .filterNot(::isFixedSize)
-                    .filterNotStandard(standardSize)
+                    //.filterNot(::isFixedSize)
+                 //   .filterNotStandard(standardSize)
                     .toList()
                     .fold()
                     .copy(title = i18n.string.custom),
@@ -180,9 +180,9 @@ class StatsViewModel(
         return stats.isSizeOf(legendSize)
     }
 
-    private fun isFixedSize(stats: Stats): Boolean {
-        return stats.isSizeOf(standardSize)
-    }
+//    private fun isFixedSize(stats: Stats): Boolean {
+//        return stats.isSizeOf(standardSize)
+//    }
 
     private fun isIntermediate(stats: Stats): Boolean {
         return stats.isSizeOf(intermediateSize)
