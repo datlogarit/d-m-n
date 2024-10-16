@@ -123,11 +123,11 @@ std::basic_string<std::size_t> generate_safe_minefield(
 
         mine_context ctx{
                 .grid = result,
-                .square_list = {},
-                .to_fill = {},
-                .to_empty = {},
-                .set_list = {},
-                .changes = {},
+                .square_list = {},//các thông tin trong list ô vuông
+                .to_fill = {},//lưu trữ các ô cần đc điền (fill) trong lúc xử lý
+                .to_empty = {},//lưu trữ các ô cần làm trống
+                .set_list = {}, //lưu trữ các ô đã được mở (các ô được thiết lập hoặc cập nhật)
+                .changes = {},//cập nhập các thay đổi (như đánh cờ hoặc mở ô)
                 .width = width,
                 .height = height,
                 .size = width * height,

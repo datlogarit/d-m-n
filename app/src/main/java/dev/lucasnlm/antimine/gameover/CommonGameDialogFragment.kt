@@ -208,29 +208,29 @@ abstract class CommonGameDialogFragment : AppCompatDialogFragment() {
         )
     }
 
-    protected fun showAdsAndContinue() {
-        activity?.let { activity ->
-            if (!activity.isFinishing) {
-                adsManager.showRewardedAd(
-                    activity,
-                    onRewarded = {
-                        continueGame()
-                    },
-                    onFail = {
-                        adsManager.showInterstitialAd(
-                            activity,
-                            onDismiss = {
-                                continueGame()
-                            },
-                            onError = {
-                                Toast.makeText(context, i18n.string.no_network, Toast.LENGTH_SHORT).show()
-                            },
-                        )
-                    },
-                )
-            }
-        }
-    }
+//    protected fun showAdsAndContinue() {
+//        activity?.let { activity ->
+//            if (!activity.isFinishing) {
+//                adsManager.showRewardedAd(
+//                    activity,
+//                    onRewarded = {
+//                        continueGame()
+//                    },
+//                    onFail = {
+//                        adsManager.showInterstitialAd(
+//                            activity,
+//                            onDismiss = {
+//                                continueGame()
+//                            },
+//                            onError = {
+//                                Toast.makeText(context, i18n.string.no_network, Toast.LENGTH_SHORT).show()
+//                            },
+//                        )
+//                    },
+//                )
+//            }
+//        }
+//    }
 
     companion object {
         const val DIALOG_STATE = "dialog_state"

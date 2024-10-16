@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="en">
+    <string name="intro1">Sản phẩm bài tập lớn môn phát triển game trên android </string>
+    <string name="intro2">Được phát triển bởi nhóm 18 </string>
     <string name="tutorial">Tutorial</string>
     <string name="tutorial_basic">The rule of the game is simple, the number on a square shows the number of mines adjacent to it and you have to flag all the mines.</string>
     <string name="tutorial_text_1">If a number is touching the same number of squares, then the squares are all mines.</string>

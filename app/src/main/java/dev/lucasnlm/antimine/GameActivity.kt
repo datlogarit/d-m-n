@@ -124,11 +124,6 @@ class GameActivity :
         }
 
         setContentView(binding.root)
-
-//        if (!preferencesRepository.isPremiumEnabled()) {
-//            adsManager.start(this)
-//        }
-
         bindViewModel()
         bindToolbar()
         bindTapToBegin()
@@ -579,7 +574,8 @@ class GameActivity :
             isVisible = canUseHelpNow
             text =
                 if (canRequestHelpWithAds) {
-                    "+10"//
+//                    "+10"//
+                    "0"
                 } else {
                     gameViewModel.getTips().toL10nString()
                 }
@@ -587,11 +583,7 @@ class GameActivity :
 
         binding.shortcutIcon.apply {
             TooltipCompat.setTooltipText(this, getString(i18n.string.help))
-//            if (canRequestHelpWithAds) {
-//                setImageResource(R.drawable.movie)
-//            } else {
             setImageResource(R.drawable.hint)
-//            }
             setColorFilter(binding.minesCount.currentTextColor)
 
             if (canUseHelpNow) {
@@ -608,27 +600,32 @@ class GameActivity :
                         lifecycleScope.launch {
                             analyticsManager.sentEvent(Analytics.RequestMoreHints)
                             val wasPlaying = gameAudioManager.isPlayingMusic()
-                            adsManager.showRewardedAd(
-                                activity = this@GameActivity,
-                                onStart = {
-                                    if (wasPlaying) {
-                                        gameAudioManager.pauseMusic()
-                                    }
-                                },
-                                onRewarded = {
-                                    if (wasPlaying) {
-                                        gameAudioManager.resumeMusic()
-                                    }
-                                    revealRandomMineShowWarning(false)
-                                    gameViewModel.sendEvent(GameEvent.GiveMoreTip)
-                                },
-                                onFail = {
-                                    if (wasPlaying) {
-                                        gameAudioManager.resumeMusic()
-                                    }
-                                    showGameWarning(i18n.string.fail_to_load_ad)
-                                },
-                            )
+//                            revealRandomMineShowWarning(false)
+//                            gameViewModel.sendEvent(GameEvent.GiveMoreTip)
+
+
+
+//                            adsManager.showRewardedAd(
+//                                activity = this@GameActivity,
+//                                onStart = {
+//                                    if (wasPlaying) {
+//                                        gameAudioManager.pauseMusic()
+//                                    }
+//                                },
+//                                onRewarded = {
+//                                    if (wasPlaying) {
+//                                        gameAudioManager.resumeMusic()
+//                                    }
+//                                    revealRandomMineShowWarning(false)
+//                                    gameViewModel.sendEvent(GameEvent.GiveMoreTip)
+//                                },
+//                                onFail = {
+//                                    if (wasPlaying) {
+//                                        gameAudioManager.resumeMusic()
+//                                    }
+//                                    showGameWarning(i18n.string.fail_to_load_ad)
+//                                },
+//                            )
                         }
                     }
                 } else {
@@ -722,28 +719,10 @@ class GameActivity :
     }
 
     private fun startNewGameWithAds() {
-//        if (!preferencesRepository.isPremiumEnabled()) {
-//            if (featureFlagManager.useInterstitialAd) {
-//                adsManager.showInterstitialAd(
-//                    activity = this,
-//                    onError = {
-//                        lifecycleScope.launch {
-//                            gameViewModel.startNewGame()
-//                        }
-//                    },
-//                    onDismiss = {
-//                        lifecycleScope.launch {
-//                            gameViewModel.startNewGame()
-//                        }
-//                    },
-//                )
-//            }
-//        }
-//        else {
+
         lifecycleScope.launch {
             gameViewModel.startNewGame()
         }
-//        }
     }
 
     private fun refreshRetryShortcut(enabled: Boolean) {

@@ -69,27 +69,30 @@ int compare_square(const square &a, const square &b) {
     }
 }
 
-int mine_open(mine_context &ctx, std::size_t x, std::size_t y) {
-    int result = 0;
 
-    assert(x >= 0 && x < ctx.width && y >= 0 && y < ctx.height);
-    if (ctx.grid[y * ctx.width + x]) {
+
+//kiểm tra ô vuông tại vị trí (x, y)
+int mine_open(mine_context &ctx, std::size_t x, std::size_t y) {
+    int result = 0;//biến để đếm số mìn của các ô xung quanh
+//người chơi nhấn vào ô có mìn, trả về -1 
+    assert(x >= 0 && x < ctx.width && y >= 0 && y < ctx.height);//lệnh đảm bảo điều kiện
+    if (ctx.grid[y * ctx.width + x]) {//chuyển tọa độ 2 chiều thành mảng 1 chiều
         return -1; // bang!
     }
-
-    for (int i = -1; i <= +1; i++) {
-        if (x + i < 0 || x + i >= ctx.width) {
+//người chơi nhấn vào ô không chứa mìn, nhấn và trả về số lượng mìn của các ô xung quanh
+    for (int i = -1; i <= +1; i++) {// tọa độ của x bắt đầu từ 0
+        if (x + i < 0 || x + i >= ctx.width) {//cột xung quanh nằm ngoài bảng chơi
             continue;
         }
         for (int j = -1; j <= +1; j++) {
             if (y + j < 0 || y + j >= ctx.height) {
                 continue;
             }
-            if (i == 0 && j == 0) {
+            if (i == 0 && j == 0) {//vị trí tại đúng (x, y)
                 continue;
             }
             if (ctx.grid[(y + j) * ctx.width + (x + i)]) {
-                result++;
+                result++;//nếu mà có mìn, tức giá trị khác 0 thì tăng biến result
             }
         }
     }
@@ -135,11 +138,13 @@ void mine_perturbation(
      *  - first, unknown squares on the boundary of known space
      *  - next, unknown squares beyond that boundary
      * 	- as a very last resort, known squares, but not within one
-     * 	  square of the starting position.
+     * 	  square of the starting position. (ô đã biết nhưng không trong vị trí bắt đầu)
      *
      * Each of these sections needs to be shuffled independently.
      * We do this by preparing list of all squares and then sorting
      * it with a random secondary key.
+     * (mỗi ô xáo trộn độc lập, chuẩn bị cho danh sách tất cả 
+     * các ô và sắp xếp nó theo khóa phụ ngẫu nhiên)
      */
     for (std::size_t y = 0; y < ctx.height; y++) {
         for (std::size_t x = 0; x < ctx.width; x++) {
@@ -164,19 +169,21 @@ void mine_perturbation(
              * If this square is in the input set, also don't put
              * it on the list!
              */
-            if ((mask == 0 && grid[y * ctx.width + x] == -2) ||
-                (x >= setx && x < setx + 3 &&
+            if ((mask == 0 && grid[y * ctx.width + x] == -2) || //ô tại vị trí (x, y chưa được mở)
+                (x >= setx && x < setx + 3 &&//setx, sety là tọa độ bắt đầu của tập các ô
                  y >= sety && y < sety + 3 &&
                  mask & (1 << ((y - sety) * 3 + (x - setx)))))
                 continue;
 
             if (grid[y * ctx.width + x] != -2) {
-                current.type = 3;    /* known square */
+                current.type = 3;    /* known square, đánh dấu là ô đã biết, class 3 */
             } else {
                 /*
                  * Unknown square. Examine everything around it and
                  * see if it borders on any known squares. If it
                  * does, it's class 1, otherwise it's 2.
+                 * ô chưa biết, kiểm tra xung quanh nó có tiếp xúc với ô nào đã biết chưa
+                 * nếu có thì nó mang class 1(ô lân cận đã biết), chưa thì nó mang trạng thái 2(ô lân cận chưa biết)
                  */
 
                 current.type = 2;
@@ -195,7 +202,7 @@ void mine_perturbation(
 
             /*
              * Finally, a random number to cause qsort to
-             * shuffle within each group.
+             * shuffle(xáo trộn) within each group.
              */
             current.random = random_bits(ctx.random);
             square_list.push_back(current);
@@ -1246,8 +1253,8 @@ bool try_solve_minefield(mine_context &context, std::mt19937 &random) {
     return result;
 }
 
-extern "C" JNIEXPORT jstring JNICALL
-Java_dev_lucasnlm_antimine_sgtatham_SgTathamMines_createMinefield(
+extern "C" JNIEXPORT jstring JNICALL// định nghĩa JNI
+Java_dev_lucasnlm_antimine_sgtatham_SgTathamMines_createMinefield(//tên hàm
         JNIEnv *env,
         jobject javaThis,
         jlong inSeed,

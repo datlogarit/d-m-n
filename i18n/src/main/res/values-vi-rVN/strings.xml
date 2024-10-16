@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:locale="vi">
+    <string name="intro1" >Sản phẩm bài tập lớn môn phát triển game trên android </string>
+    <string name="intro2" >Được phát triển bởi nhóm 18 </string>
     <string name="tutorial">Hướng dẫn</string>
     <string name="tutorial_basic">Quy tắc trò chơi rất đơn giản, con số trên một ô vuông cho thấy số mìn liền kề với nó và bạn phải gắn cờ tất cả mìn.</string>
     <string name="tutorial_text_1">Nếu một con số đang chạm số các ô vuông đó, thì tất cả các ô vuông đó đều là mìn.</string>
